@@ -1,8 +1,8 @@
 <!-- 顶部：缓慢流动的波浪横幅 -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0:111B30,100:24385A&height=200&section=header&text=lanqing431&fontSize=52&fontColor=DCE8FC&fontAlignY=36&desc=Agent%20Developer&descSize=18&descAlignY=58&animation=fadeIn">
-  <source media="(prefers-color-scheme: light)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0:A1C4FD,100:C2E9FB&height=200&section=header&text=lanqing431&fontSize=52&fontColor=172B4D&fontAlignY=36&desc=Agent%20Developer&descSize=18&descAlignY=58&animation=fadeIn">
-  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:111B30,100:24385A&height=200&section=header&text=lanqing431&fontSize=52&fontColor=DCE8FC&fontAlignY=36&desc=Agent%20Developer&descSize=18&descAlignY=58&animation=fadeIn" alt="个人主页波浪横幅">
+  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0:111B30%2C100:24385A&height=200&section=header&text=lanqing431&fontSize=52&fontColor=DCE8FC&fontAlignY=36&desc=Agent%20Developer&descSize=18&descAlignY=58&animation=fadeIn">
+  <source media="(prefers-color-scheme: light)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0:A1C4FD%2C100:C2E9FB&height=200&section=header&text=lanqing431&fontSize=52&fontColor=172B4D&fontAlignY=36&desc=Agent%20Developer&descSize=18&descAlignY=58&animation=fadeIn">
+  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:111B30%2C100:24385A&height=200&section=header&text=lanqing431&fontSize=52&fontColor=DCE8FC&fontAlignY=36&desc=Agent%20Developer&descSize=18&descAlignY=58&animation=fadeIn" alt="个人主页波浪横幅">
 </picture>
 
 <!-- 打字机效果 -->
@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=lanqing431&label=%E4%B8%BB%E9%A1%B5%E8%AE%BF%E9%97%AE&color=7aa2f7&style=flat-square" alt="views" />
+  <img src="https://komarev.com/ghpvc/?username=lanqing431&label=Views&color=7aa2f7&style=flat-square" alt="主页访问次数" />
 </p>
 
 ---
@@ -77,7 +77,7 @@ class Lanqing431(Agent):
 
 <!-- 底部波浪 -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0:24385A,100:111B30&height=120&section=footer">
-  <source media="(prefers-color-scheme: light)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0:C2E9FB,100:A1C4FD&height=120&section=footer">
-  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:24385A,100:111B30&height=120&section=footer" alt="底部波浪装饰">
+  <source media="(prefers-color-scheme: dark)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0:24385A%2C100:111B30&height=120&section=footer">
+  <source media="(prefers-color-scheme: light)" srcset="https://capsule-render.vercel.app/api?type=waving&color=0:C2E9FB%2C100:A1C4FD&height=120&section=footer">
+  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:24385A%2C100:111B30&height=120&section=footer" alt="底部波浪装饰">
 </picture>
