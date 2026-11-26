@@ -19,23 +19,13 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
-      - name: 生成浅色卡片
+      - name: 生成统计卡片
         uses: vn7n24fzkq/github-profile-summary-cards@7022eb6bd48de38b092f54110a8ff8185f2ac4a1 # release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           USERNAME: ${{ github.repository_owner }}
           UTC_OFFSET: 8
-          THEME: github
-          AUTO_PUSH: false
-      - name: 生成深色卡片
-        uses: vn7n24fzkq/github-profile-summary-cards@7022eb6bd48de38b092f54110a8ff8185f2ac4a1 # release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          USERNAME: ${{ github.repository_owner }}
-          UTC_OFFSET: 8
-          THEME: github_dark
           AUTO_PUSH: false
       - name: 提交主页引用的六张图
         run: |
