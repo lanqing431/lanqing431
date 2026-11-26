@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340">
+<defs>
+  <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="55"/></filter>
+  <clipPath id="clip"><rect width="1200" height="340" rx="24"/></clipPath>
+  <linearGradient id="sheen" x1="0" x2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset=".5" stop-color="#ffffff" stop-opacity=".35"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+  <radialGradient id="orb" cx=".35" cy=".3"><stop offset="0" stop-color="#ffffff" stop-opacity=".5"/><stop offset=".5" stop-color="#ffffff" stop-opacity=".12"/><stop offset="1" stop-color="#ffffff" stop-opacity=".04"/></radialGradient>
+
+</defs>
+<style>
+.b1{animation:b1 24s ease-in-out infinite}.b2{animation:b2 28s ease-in-out infinite}
+.b3{animation:b3 32s ease-in-out infinite}.b4{animation:b4 26s ease-in-out infinite}
+@keyframes b1{50%{transform:translate(140px,40px)}}@keyframes b2{50%{transform:translate(-160px,30px)}}
+@keyframes b3{50%{transform:translate(90px,-50px)}}@keyframes b4{50%{transform:translate(-80px,-40px)}}
+.fade{opacity:0;animation:fade 1s ease-out forwards}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes grow{from{width:0}}
+@keyframes show{from{opacity:0}}
+@keyframes draw{from{stroke-dashoffset:1}}
+.fl{animation:fl 6s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-12px)}}
+.act{opacity:0;animation:act 8s ease-in-out infinite}@keyframes act{0%,100%{opacity:1}20%,80%{opacity:0}}@media (prefers-reduced-motion: reduce){*{animation:none!important}.fade{opacity:1!important}}</style>
+<g clip-path="url(#clip)">
+  <rect width="1200" height="340" fill="#0f1424"/>
+  <g filter="url(#blur)" opacity=".40"><g class="b1"><circle cx="240" cy="60" r="200" fill="#14b8a6"/></g><g class="b2"><circle cx="900" cy="80" r="220" fill="#6366f1"/></g><g class="b3"><circle cx="620" cy="330" r="200" fill="#0ea5e9"/></g><g class="b4"><circle cx="1150" cy="300" r="180" fill="#7c3aed"/></g></g>
+  <rect x="28" y="28" width="1144" height="284" rx="20" fill="#ffffff" fill-opacity=".05" stroke="#ffffff" stroke-opacity=".16" stroke-width="1.5"/>
+  <g class="fl" style="animation-delay:0s"><circle cx="960" cy="160" r="54" fill="url(#orb)" stroke="#ffffff" stroke-opacity=".3"/></g><g class="fl" style="animation-delay:-3s"><circle cx="1070" cy="236" r="24" fill="url(#orb)" stroke="#ffffff" stroke-opacity=".3"/></g>
+<g font-family="'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC','Noto Sans SC','WenQuanYi Zen Hei',-apple-system,Helvetica,Arial,sans-serif">
+  <g class="fade"><text x="76" y="94" font-size="18" fill="#b4bcd6">你好，我是</text></g>
+  <g class="fade" style="animation-delay:.15s"><text x="70" y="176" font-size="84" font-weight="800" fill="#eef2ff">lanqing431</text></g>
+  <g class="fade" style="animation-delay:.3s"><text x="76" y="228" font-size="23" fill="#b4bcd6">Agent 开发者 · 让模型学会思考、规划与行动</text></g>
+  <g class="fade" style="animation-delay:.45s"><rect x="76" y="252" width="80" height="36" rx="18" fill="#ffffff" fill-opacity=".06" stroke="#ffffff" stroke-opacity=".16" /><rect x="76" y="252" width="80" height="36" rx="18" fill="#ffffff" fill-opacity=".16" class="act" style="animation-delay:0s"/><circle cx="94" cy="270" r="4" fill="#5eead4"/><text x="104" y="276" font-size="16" fill="#eef2ff">思考</text><rect x="172" y="252" width="80" height="36" rx="18" fill="#ffffff" fill-opacity=".06" stroke="#ffffff" stroke-opacity=".16" /><rect x="172" y="252" width="80" height="36" rx="18" fill="#ffffff" fill-opacity=".16" class="act" style="animation-delay:-6s"/><circle cx="190" cy="270" r="4" fill="#5eead4"/><text x="200" y="276" font-size="16" fill="#eef2ff">规划</text><rect x="268" y="252" width="80" height="36" rx="18" fill="#ffffff" fill-opacity=".06" stroke="#ffffff" stroke-opacity=".16" /><rect x="268" y="252" width="80" height="36" rx="18" fill="#ffffff" fill-opacity=".16" class="act" style="animation-delay:-4s"/><circle cx="286" cy="270" r="4" fill="#5eead4"/><text x="296" y="276" font-size="16" fill="#eef2ff">行动</text><rect x="364" y="252" width="80" height="36" rx="18" fill="#ffffff" fill-opacity=".06" stroke="#ffffff" stroke-opacity=".16" /><rect x="364" y="252" width="80" height="36" rx="18" fill="#ffffff" fill-opacity=".16" class="act" style="animation-delay:-2s"/><circle cx="382" cy="270" r="4" fill="#5eead4"/><text x="392" y="276" font-size="16" fill="#eef2ff">反思</text></g>
+</g>
+</g>
+<rect x="180" y=".75" width="840" height="1" fill="url(#sheen)"/>
+<rect x=".75" y=".75" width="1198.5" height="338.5" rx="23.25" fill="none" stroke="#ffffff" stroke-opacity=".14" stroke-width="1.5"/>
+</svg>

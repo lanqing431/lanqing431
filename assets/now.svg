@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="250" viewBox="0 0 1200 250">
+<defs>
+  <filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="55"/></filter>
+  <clipPath id="clip"><rect width="1200" height="250" rx="24"/></clipPath>
+  <linearGradient id="sheen" x1="0" x2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset=".5" stop-color="#ffffff" stop-opacity=".35"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+  <radialGradient id="orb" cx=".35" cy=".3"><stop offset="0" stop-color="#ffffff" stop-opacity=".5"/><stop offset=".5" stop-color="#ffffff" stop-opacity=".12"/><stop offset="1" stop-color="#ffffff" stop-opacity=".04"/></radialGradient>
+  <linearGradient id="g0" x1="0" x2="1"><stop offset="0" stop-color="#5eead4"/><stop offset="1" stop-color="#5eead4"/></linearGradient><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#5eead4"/><stop offset="1" stop-color="#5eead4"/></linearGradient><linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#5eead4"/><stop offset="1" stop-color="#5eead4"/></linearGradient><linearGradient id="g3" x1="0" x2="1"><stop offset="0" stop-color="#5eead4"/><stop offset="1" stop-color="#5eead4"/></linearGradient>
+</defs>
+<style>
+.b1{animation:b1 24s ease-in-out infinite}.b2{animation:b2 28s ease-in-out infinite}
+.b3{animation:b3 32s ease-in-out infinite}.b4{animation:b4 26s ease-in-out infinite}
+@keyframes b1{50%{transform:translate(140px,40px)}}@keyframes b2{50%{transform:translate(-160px,30px)}}
+@keyframes b3{50%{transform:translate(90px,-50px)}}@keyframes b4{50%{transform:translate(-80px,-40px)}}
+.fade{opacity:0;animation:fade 1s ease-out forwards}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes grow{from{width:0}}
+@keyframes show{from{opacity:0}}
+@keyframes draw{from{stroke-dashoffset:1}}
+.fl{animation:fl 6s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-12px)}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}.fade{opacity:1!important}}</style>
+<g clip-path="url(#clip)">
+  <rect width="1200" height="250" fill="#0f1424"/>
+  <g filter="url(#blur)" opacity=".22"><circle cx="80" cy="250" r="200" fill="#0ea5e9"/></g>
+  <rect width="1200" height="250" fill="#ffffff" fill-opacity=".03"/>
+  <g font-family="'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans CJK SC','Noto Sans SC','WenQuanYi Zen Hei',-apple-system,Helvetica,Arial,sans-serif"><g class="fade" style="animation-delay:0.00s"><rect x="56" y="51" width="64" height="34" rx="17" fill="#5eead4" fill-opacity=".16" stroke="#5eead4" stroke-opacity=".35"/><text x="88" y="74" text-anchor="middle" font-size="15" font-weight="700" fill="#5eead4">在做</text><text x="140" y="75" font-size="19" fill="#eef2ff">更可靠的 Agent 工作流</text></g><g class="fade" style="animation-delay:0.12s"><rect x="56" y="109" width="64" height="34" rx="17" fill="#5eead4" fill-opacity=".16" stroke="#5eead4" stroke-opacity=".35"/><text x="88" y="132" text-anchor="middle" font-size="15" font-weight="700" fill="#5eead4">在学</text><text x="140" y="133" font-size="19" fill="#eef2ff">长期记忆与自我反思</text></g><g class="fade" style="animation-delay:0.24s"><rect x="56" y="167" width="64" height="34" rx="17" fill="#5eead4" fill-opacity=".16" stroke="#5eead4" stroke-opacity=".35"/><text x="88" y="190" text-anchor="middle" font-size="15" font-weight="700" fill="#5eead4">在想</text><text x="140" y="191" font-size="19" fill="#eef2ff">Agent 如何与人更好地协作</text></g><line x1="620" y1="44" x2="620" y2="206" stroke="#ffffff" stroke-opacity=".10"/><text x="664" y="68" font-size="16" fill="#b4bcd6">好奇心</text><rect x="770" y="58" width="300" height="8" rx="4" fill="#ffffff" fill-opacity=".08"/><rect x="770" y="58" width="300.0" height="8" rx="4" fill="url(#g0)" style="animation:grow 1.6s cubic-bezier(.2,.8,.2,1) 0.30s both"/><text x="1144" y="70" text-anchor="end" font-size="24" font-weight="700" fill="#5eead4">∞</text><text x="664" y="112" font-size="16" fill="#b4bcd6">专注力</text><rect x="770" y="102" width="300" height="8" rx="4" fill="#ffffff" fill-opacity=".08"/><rect x="770" y="102" width="264.0" height="8" rx="4" fill="url(#g1)" style="animation:grow 1.6s cubic-bezier(.2,.8,.2,1) 0.45s both"/><text x="1144" y="112" text-anchor="end" font-size="16" font-weight="700" fill="#5eead4">88%</text><text x="664" y="156" font-size="16" fill="#b4bcd6">咖啡因</text><rect x="770" y="146" width="300" height="8" rx="4" fill="#ffffff" fill-opacity=".08"/><rect x="770" y="146" width="216.0" height="8" rx="4" fill="url(#g2)" style="animation:grow 1.6s cubic-bezier(.2,.8,.2,1) 0.60s both"/><text x="1144" y="156" text-anchor="end" font-size="16" font-weight="700" fill="#5eead4">72%</text><text x="664" y="200" font-size="16" fill="#b4bcd6">调试耐心</text><rect x="770" y="190" width="300" height="8" rx="4" fill="#ffffff" fill-opacity=".08"/><rect x="770" y="190" width="183.0" height="8" rx="4" fill="url(#g3)" style="animation:grow 1.6s cubic-bezier(.2,.8,.2,1) 0.75s both"/><text x="1144" y="200" text-anchor="end" font-size="16" font-weight="700" fill="#5eead4">61%</text></g>
+</g>
+<rect x="180" y=".75" width="840" height="1" fill="url(#sheen)"/>
+<rect x=".75" y=".75" width="1198.5" height="248.5" rx="23.25" fill="none" stroke="#ffffff" stroke-opacity=".14" stroke-width="1.5"/>
+</svg>

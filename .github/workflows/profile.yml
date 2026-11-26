@@ -2,68 +2,60 @@ name: 更新主页动态内容
 
 on:
   schedule:
-    - cron: "0 16 * * *"
-  workflow_dispatch:
+    - cron: "0 16 * * *"   # 每天北京时间 0 点
+  workflow_dispatch:        # 支持手动运行
   push:
     branches: [main]
-    paths: [".github/workflows/profile.yml"]
+    paths:
+      - ".github/workflows/profile.yml"
+      - "scripts/**"
+      - "assets/generate.py"
 
 concurrency:
-  group: profile-assets
+  group: profile-update
 
 jobs:
-  summary-cards:
-    name: 生成统计卡片
-    runs-on: ubuntu-latest
+  update:
     permissions:
       contents: write
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
-      - name: 生成统计卡片
-        uses: vn7n24fzkq/github-profile-summary-cards@7022eb6bd48de38b092f54110a8ff8185f2ac4a1 # release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          USERNAME: ${{ github.repository_owner }}
-          UTC_OFFSET: 8
-          AUTO_PUSH: false
-      - name: 提交主页引用的六张图
-        run: |
-          set -euo pipefail
-          for theme in github github_dark; do
-            for card in 0-profile-details 3-stats 4-productive-time; do
-              file="profile-summary-card-output/$theme/$card.svg"
-              test -s "$file"
-              git add -- "$file"
-            done
-          done
-          if git diff --cached --quiet; then
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Refresh profile summary cards"
-          git pull --rebase origin main
-          git push origin HEAD:main
 
-  snake:
-    name: 生成贡献蛇
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
+      - name: 生成贡献蛇
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-snake.svg
-            dist/github-snake-dark.svg?palette=github-dark
-      - uses: crazy-max/ghaction-github-pages@df5cc2bfa78282ded844b354faee141f06b41865 # v4
-        with:
-          target_branch: output
-          build_dir: dist
-          keep_history: true
-          allow_empty_commit: false
-          jekyll: false
+            assets/generated/snake-light.svg?color_snake=#0d9488&color_dots=#ebedf0,#c7f0ea,#8fd8e8,#8ea2f5,#6d5fd6
+            assets/generated/snake-dark.svg?color_snake=#5eead4&color_dots=#161b2e,#1f3b5c,#2c5e8a,#4f7fd8,#a5b4fc
+
+      - name: 生成数据卡片
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/update_stats.py "${{ github.repository_owner }}"
+
+      - name: 让贡献蛇遵循减少动态效果设置
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          rule = '<style>@media (prefers-reduced-motion: reduce){*{animation:none!important}}</style>'
+          for path in Path('assets/generated').glob('snake-*.svg'):
+              svg = path.read_text(encoding='utf-8')
+              assert '@keyframes' in svg and svg.rstrip().endswith('</svg>'), path
+              path.write_text(svg.replace('</svg>', rule + '</svg>'), encoding='utf-8')
+          PY
+
+      - name: 提交更新
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- assets/generated/stats.svg assets/generated/snake-dark.svg assets/generated/snake-light.svg
+          if git diff --cached --quiet; then
+            echo "没有变化"
+          else
+            git commit -m "chore: 更新主页数据"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
